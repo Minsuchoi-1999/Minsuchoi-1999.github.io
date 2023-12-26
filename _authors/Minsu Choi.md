@@ -1,7 +1,7 @@
 ---
 layout: author
 photo: /assets/img/uploads/profile.jpg
-name: mranderson
+name: Minsu Choi
 display_name: Minsu Choi
 position: The One
 bio: 발전한 건 태도, 여전한 건 행동
