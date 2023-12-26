@@ -13,4 +13,4 @@ permalink: /about/
 컴퓨터공학과 전공, 수학과 부전공<br>
 취미는 백준 문제 풀기<br>
 노력하며 동시에 즐기는 사람<br>
-<a href="https://github.com/Minsuchoi-1999/Minsuchoi-1999">더 자세하게 주인장 알아보기</a>
+<a href="https://minsuchoi-1999.github.io/블로그-주인장-소개/">더 자세하게 주인장 알아보기</a>
