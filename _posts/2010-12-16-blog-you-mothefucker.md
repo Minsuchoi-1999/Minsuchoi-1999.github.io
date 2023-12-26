@@ -1,7 +1,7 @@
 ---
 date: 2023-12-26 12:22:40
 layout: post
-title: 블로그 주인장 소개
+title: blog you motherfucker
 subtitle: "주인장의 간단한 이력을 소개합니다."
 description: >-
   주인장 소개 페이지
