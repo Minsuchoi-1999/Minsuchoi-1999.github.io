@@ -1,7 +1,6 @@
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Minflix
+title: Minflix | Minsu's TechBlog
+description: Minsu's techblog, thanks to developer Thiago Rossener.
 tags:
   - blog
   - template
@@ -18,7 +17,8 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
+
+email: jungsi199@naver.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
