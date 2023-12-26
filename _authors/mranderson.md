@@ -1,15 +1,10 @@
 ---
 layout: author
-photo: /assets/img/uploads/profile.png
+photo: /assets/img/uploads/profile.jpg
 name: mranderson
-display_name: Mr. Anderson
+display_name: Minsu Choi
 position: The One
-bio: Bulletproof hacker passionate about leather clothes.
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
+bio: 발전한 건 태도, 여전한 건 행동
+github_username: Minsuchoi-1999
+instagram_username: minsu.c.0621
 ---
-

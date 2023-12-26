@@ -1,19 +1,16 @@
 ---
-layout: page
+layout: revised_page
 menu: false
-date: '2020-02-27 01:53:59'
+date: "2023-12-26 11:11:11"
 title: About
 description: Some description.
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thomas A. Anderson" width="200">
-
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+아직도 뭘 해야할지 모르는 학부생<br>
+컴퓨터공학과 전공, 수학과 부전공<br>
+취미는 백준 문제 풀기<br>
+노력하며 동시에 즐기는 사람<br>
+<a href="https://github.com/Minsuchoi-1999/Minsuchoi-1999">더 자세하게 주인장 알아보기</a>
