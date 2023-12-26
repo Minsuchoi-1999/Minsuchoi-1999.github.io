@@ -50,4 +50,25 @@ layout: compress
     .text-container {
         /* 텍스트 스타일 */
     }
+
+    /* 모바일 환경을 위한 스타일링 */
+    @media (max-width: 768px) {
+        .image-container img {
+            width: 350px;
+            margin-top : -100px;
+            margin-left: 100px;
+            margin-bottom: -100px; /* 사진과 텍스트 간의 간격을 조절 */
+        }
+
+        .image-text-container {
+            flex-direction: column; /* 모바일에서는 세로 방향으로 배치 */
+            align-items: center; /* 모바일에서 세로 중앙 정렬 */
+        }
+
+        .image-container {
+            margin-bottom: 0; /* 사진과 텍스트 사이의 간격을 없앰 */
+        }
+    }
+</style>
+
 </style>
