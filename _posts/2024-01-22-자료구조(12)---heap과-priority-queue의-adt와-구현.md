@@ -141,7 +141,7 @@ int right_child(const int index) {
 }
 
 int parent(const int index) {
-	return (index -1)/ 2;
+	return (index - 1) / 2;
 }
 
 //+ empty한지 확인
@@ -164,7 +164,7 @@ void swap(int* x, int* y) {
 
 //+ leaf node인지 확인
 int is_leaf(const int index, const int num_of_nodes) {
-	if (left_child(index) > num_of_nodes -1) {// 마지막 노드의 index는 num_of_nodes -1이니까
+	if (left_child(index) > num_of_nodes - 1) {// 마지막 노드의 index는 num_of_nodes -1이니까
 		return 1;
 	}
 	else {
@@ -184,7 +184,7 @@ int is_root(const int index) {
 
 // +) 핵심 기능, insertion Heapify
 int insertion_heapify(Heap st, const int index) {
-	if (is_root(index) || st[index] < st[parent(index)]){
+	if (is_root(index) || st[index] < st[parent(index)]) {
 		return 1; // 탈출 조건 및 성공하면 1 반환
 	}
 	else {
@@ -221,7 +221,7 @@ int deletion_heapify(Heap st, const int index, const int num_of_nodes) {
 	if (is_leaf(index, num_of_nodes)) { // 자식이 없을 때
 		return 1; // 탈출 조건1
 	}
-	else if (right_child(index) > num_of_nodes -1) { //자식이 하나 있을 때
+	else if (right_child(index) > num_of_nodes - 1) { //자식이 하나 있을 때
 		if (st[index] >= st[left_child(index)]) {
 			return 1; // 탈출 조건2
 		}
@@ -230,11 +230,11 @@ int deletion_heapify(Heap st, const int index, const int num_of_nodes) {
 			return deletion_heapify(st, left_child(index), num_of_nodes);
 		}
 	}
-	else{// 자식이 둘 다 있을 때
+	else {// 자식이 둘 다 있을 때
 		if (st[index] >= st[left_child(index)] && st[index] >= st[right_child(index)]) {
 			return 1; // 탈출 조건3
 		}
-		else if(st[index] >= st[left_child(index)] && st[index] < st[right_child(index)]){ // 오른쪽 자식이 더 크면
+		else if (st[index] >= st[left_child(index)] && st[index] < st[right_child(index)]) { // 오른쪽 자식이 더 크면
 			swap(&st[index], &st[left_child(index)]);
 			return deletion_heapify(st, left_child(index), num_of_nodes);
 		}
@@ -251,7 +251,7 @@ int deletion_heapify(Heap st, const int index, const int num_of_nodes) {
 				swap(&st[index], &st[right_child(index)]);
 				return deletion_heapify(st, right_child(index), num_of_nodes);
 			}
- 		}
+		}
 	}
 
 
@@ -279,7 +279,6 @@ int Delete(Heap* st, int* num_of_nodes) {
 	else {
 		Heap new_st = (Heap)realloc(*st, sizeof(int) * (*num_of_nodes));
 		*st = new_st;
-        free(*st);
 	}//아니면 재할당
 
 	return ret;// Delete한 원소 리턴
@@ -351,6 +350,36 @@ int main(void) {
 이 코드에서는 최대한 반복되는 내용을 함수로 만들어서 빼는 스킬을 배울 수 있었다.
 
 또한, 이중 포인터를 이용한 간접참조를 \(\*st\)\[index\]로 하는 방법에 대해서도 간접적으로 다루었다.
+
+---
+
+## 결과창
+
+```js
+1 is pushed into Heap!
+
+3 is pushed into Heap!
+
+4 is pushed into Heap!
+
+4 1 3
+
+5 is pushed into Heap!
+
+5 4 3 1
+
+2 is pushed into Heap!
+
+5 4 3 1 2
+
+4 2 3 1
+
+3 2 1
+
+2 1
+
+1
+```
 
 ---
 
