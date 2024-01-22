@@ -56,11 +56,11 @@ BST는 말 그대로 **조회(Search)**가 핵심인 트리로, 정렬되어있�
 
 예를 들어, 아래와 같은 트리는 Max 힙
 
-<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705903503/Max_힙_bkjkea.png">
+<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705903503/Max_Heap_bkjkea.png">
 
 또, 아래와 같은 트리들은 Min 힙이다.
 
-<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705903503/Min_힙_at46du.png">
+<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705903503/Min_Heap_at46du.png">
 
 즉, **BST가 좌우로 정렬된 트리라면 힙은 상하로 정렬된 트리인 것이다.**
 
