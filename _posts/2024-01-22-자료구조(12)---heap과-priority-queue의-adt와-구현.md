@@ -96,7 +96,7 @@ Max 힙도 CBT가 기반이기에, 트리가 아니라 **배열(정적, 동적 �
 
 우선 삽입되었을 때 일어나는 **Insertion heapify**에 대해 알아보자.
 
-<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705907531/Insertion-In-Max-힙_alpxjv.png">
+<img src = "https://res.cloudinary.com/dtloik0ts/image/upload/v1705907531/Insertion-In-Max-Heap_alpxjv.png>
 
 1. 우선 맨 마지막에 원소를 삽입한다.
 
