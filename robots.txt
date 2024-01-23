@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://minsuchoi-1999.github.io/sitemap.xml
