@@ -164,7 +164,8 @@ void swap(int* x, int* y) {
 
 //+ leaf node인지 확인
 int is_leaf(const int index, const int num_of_nodes) {
-	if (left_child(index) > num_of_nodes - 1) {// 마지막 노드의 index는 num_of_nodes -1이니까
+	if (left_child(index) > num_of_nodes - 1) {
+		// 마지막 노드의 index는 num_of_nodes -1이니까
 		return 1;
 	}
 	else {
@@ -205,51 +206,72 @@ int insert(Heap* st, const int value, int* num_of_nodes) {
 		*st = new_st;
 	}//재할당
 
-	(*st)[*num_of_nodes] = value; // 이중 포인터를 이용한 배열 접근을 이렇게 쓸 수도 있다.
+	(*st)[*num_of_nodes] = value;
+	// 이중 포인터를 이용한 배열 접근을 이렇게 쓸 수도 있다.
+
 	printf("%d is pushed into Heap!\n\n", value);
 	*num_of_nodes += 1;
 	//대입
 	//num_of_nodes 증가
 
-	insertion_heapify(*st, *num_of_nodes - 1);// 마지막 노드의 인덱스는 num_of_nodes -1
+	insertion_heapify(*st, *num_of_nodes - 1);
+	// 마지막 노드의 인덱스는 num_of_nodes -1
 
 	return 0;
 }
 
 // +) 핵심 기능, deletion_heapify
 int deletion_heapify(Heap st, const int index, const int num_of_nodes) {
-	if (is_leaf(index, num_of_nodes)) { // 자식이 없을 때
-		return 1; // 탈출 조건1
+	if (is_leaf(index, num_of_nodes)) {
+		// 탈출 조건1 : 자식이 없을 때
+		return 1;
 	}
-	else if (right_child(index) > num_of_nodes - 1) { //자식이 하나 있을 때
-		if (st[index] >= st[left_child(index)]) {
-			return 1; // 탈출 조건2
+	else if (right_child(index) > num_of_nodes - 1) {
+		//자식이 하나 있을 때
+
+		int l_index = left_child(index);
+
+		if (st[index] >= st[l_index]) {
+			// 탈출 조건2 : 왼쪽 자식보다 크거나 같을 때
+			return 1;
 		}
 		else {
-			swap(&st[index], &st[left_child(index)]);
-			return deletion_heapify(st, left_child(index), num_of_nodes);
+			swap(&st[index], &st[l_index]);
+			return deletion_heapify(st, l_index, num_of_nodes);
 		}
 	}
-	else {// 자식이 둘 다 있을 때
-		if (st[index] >= st[left_child(index)] && st[index] >= st[right_child(index)]) {
-			return 1; // 탈출 조건3
+	else {
+		// 자식이 둘 다 있을 때
+
+		int l_index = left_child(index);
+		int r_index = right_child(index);
+
+		if (st[index] >= st[l_index] && st[index] >= st[r_index]) {
+			// 탈출 조건3 : 두 자식보다 크거나 같을 때
+			return 1;
 		}
-		else if (st[index] >= st[left_child(index)] && st[index] < st[right_child(index)]) { // 오른쪽 자식이 더 크면
-			swap(&st[index], &st[left_child(index)]);
-			return deletion_heapify(st, left_child(index), num_of_nodes);
+		else if (st[index] >= st[l_index] && st[index] < st[r_index]) {
+			// 오른쪽 자식이 더 크면
+			swap(&st[index], &st[l_index]);
+			return deletion_heapify(st, l_index, num_of_nodes);
 		}
-		else if (st[index] >= st[right_child(index)] && st[index] < st[left_child(index)]) {// 왼쪽 자식이 더 크면
-			swap(&st[index], &st[right_child(index)]);
-			return deletion_heapify(st, right_child(index), num_of_nodes);
+		else if (st[index] >= st[r_index] && st[index] < st[l_index]) {
+			// 왼쪽 자식이 더 크면
+			swap(&st[index], &st[r_index]);
+			return deletion_heapify(st, r_index, num_of_nodes);
 		}
-		else { // 두 자식 모두 다 부모보다 크면
-			if (st[left_child(index)] > st[right_child(index)]) { // 왼쪽 자식이 오른쪽 자식보다 크면
-				swap(&st[index], &st[left_child(index)]);
-				return deletion_heapify(st, left_child(index), num_of_nodes);
+		else {
+			// 두 자식 모두 다 부모보다 크면
+
+			if (st[l_index] > st[r_index]) {
+				// 왼쪽 자식이 오른쪽 자식보다 크면
+				swap(&st[index], &st[l_index]);
+				return deletion_heapify(st, l_index, num_of_nodes);
 			}
-			else {// 오른쪽 자식이 왼쪽 자식보다 크면
-				swap(&st[index], &st[right_child(index)]);
-				return deletion_heapify(st, right_child(index), num_of_nodes);
+			else {
+				// 오른쪽 자식이 왼쪽 자식보다 크면
+				swap(&st[index], &st[r_index]);
+				return deletion_heapify(st, r_index, num_of_nodes);
 			}
 		}
 	}
@@ -268,7 +290,9 @@ int Delete(Heap* st, int* num_of_nodes) {
 
 	int ret = **st;// ret값을 미리 저장(재할당을 위해)
 
-	(*st)[0] = (*st)[*num_of_nodes - 1]; //루트에 마지막 값을 대입한다, 이중 포인터를 이용한 배열 접근을 이렇게 쓸 수도 있다.
+	(*st)[0] = (*st)[*num_of_nodes - 1];
+	// 루트에 마지막 값을 대입한다.
+	// 이중 포인터를 이용한 배열 접근을 이렇게 쓸 수도 있다.
 
 	*num_of_nodes -= 1;// num_of_nodes 감소
 	deletion_heapify(*st, 0, *num_of_nodes);
@@ -414,3 +438,8 @@ int main(void) {
 🔜 더 공부해보기,
 
 1. <u><a href = "https://en.wikipedia.org/wiki/Min-max_heap">읽어볼 거리(1) - Min-Max 힙이란?</a></u>
+
+<script>
+	console.log(document.querySelectorAll("div > div > pre > code"));
+	document.querySelectorAll("div > div > pre > code")[0].style.fontSize = "15px";
+</script>
