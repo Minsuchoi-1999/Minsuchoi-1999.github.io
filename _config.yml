@@ -26,12 +26,10 @@ disqus_username: minflex
 # See: https://formspree.io/
 formspree_form_id: formspree_form_id
 
-
 # Social Media Settings
 # Remove the item if you don't need it
 github_username: Minsuchoi-1999
 instagram_username: minsu.c.0621
-
 
 # Posts Settings
 show_time_bar: true
@@ -39,15 +37,13 @@ show_modal_on_exit: true
 show_modal_on_finish_post: true
 two_columns_layout: true
 
-
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://minsuchoi-1999.github.io/" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "ko-KR"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
-
 
 # Build settings
 markdown: kramdown
@@ -86,7 +82,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-paginate-content
-
+  - jekyll-sitemap
 # Exclude my node related stuff
 exclude:
   [
