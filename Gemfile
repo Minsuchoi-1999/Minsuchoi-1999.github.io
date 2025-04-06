@@ -9,3 +9,5 @@ gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-paginate-content"
 gem "json"
+
+gem "jekyll-sitemap", "~> 1.4"
