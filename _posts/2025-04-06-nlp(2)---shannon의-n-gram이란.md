@@ -1,7 +1,7 @@
 ---
 date: 2025-04-06 04:22:41
 layout: post
-title: "NLP(2) - Shannon의 N-gram과 엔트로피란란?"
+title: "NLP(2) - Shannon의 N-gram과 엔트로피란?"
 subtitle: A Mathematical Theory of Communication 논문 리뷰
 description: 언어의 통계학적 접근에 대해 알아본다.
 image: "https://res.cloudinary.com/dtloik0ts/image/upload/t_opt/v1743834058/92bcb4eb-341c-46dd-9a9a-086117c78770.png"
