@@ -1,7 +1,7 @@
 ---
 date: 2025-04-12 07:16:25
 layout: post
-title: "NLP(3) - shannon의 n-gram 모델 구현"
+title: "NLP(3) - Shannon의 n-gram 모델 구현"
 subtitle: A Mathematical Theory of Communication 논문 리뷰
 description: 언어의 통계학적 접근에 대해 알아본다.
 image: "https://res.cloudinary.com/dtloik0ts/image/upload/t_opt/v1743834058/92bcb4eb-341c-46dd-9a9a-086117c78770.png"
@@ -74,12 +74,14 @@ for ch in txt:
     first_order_approximation_counts[ch] = 0
   first_order_approximation_counts[ch] += 1
 
-first_order_approximation_txt = ''
-
 # random.choice를 통해 키와 밸류로 생성
-for i in range(500):
-  first_order_approximation_txt += random.choices(list(first_order_approximation_counts.keys()), weights = list(first_order_approximation_counts.values()))[0]
-
+first_order_approximation_txt = ''.join(
+    random.choices(
+        list(first_order_approximation_counts.keys()),
+        weights=list(first_order_approximation_counts.values()),
+        k=500
+    )
+)
 print(first_order_approximation_txt)
 ```
 
@@ -89,12 +91,45 @@ na i uihi y tmohd  etr ledtefhli elnelbns ehn ion sae   e t eeti oeefei te wmet 
 
 확률 적용만 했는데도, 이전의 비문 형태보다는 훨씬 어떤 언어의 형태와 유사해졌다.
 
-여기서 second, third-order approximation을 적용해보자. 구현이 너무 비슷해서 생략했지만, second는 앞글자를 기준으로 2차원 딕셔너리, third는 앞의 두글자를 기준으로 2차원 딕셔너리를 만들면 된다.
+여기서 second-order approximation을 적용해보자. 구현은 2차원 딕셔너리로 하면 된다는 점과, 앞의 예시와는 다르게 앞 단어에 종속시켜야한다는 점이 조금 다르다.
 
-**second-order-approximation**
+```python
+# 2차원 딕셔너리를 만들어야함.
+transition_counts = {}
+
+# 키는 두 글자를 이용해서 만들어야함.
+for i in range(len(txt) - 1):
+    cur = txt[i]
+    nxt = txt[i + 1]
+    if cur not in transition_counts:
+        transition_counts[cur] = {}
+    if nxt not in transition_counts[cur]:
+        transition_counts[cur][nxt] = 1
+    else:
+        transition_counts[cur][nxt] += 1
+
+# 처음의 글자를 정하고, 다음과 같이 종속된 선택을 하도록 한다.
+second_order_txt = ''
+cur = random.choice(list(transition_counts.keys()))
+second_order_txt += cur
+
+for _ in range(499):
+    next_chars = list(transition_counts[cur].keys())
+    weights = list(transition_counts[cur].values())
+    nxt = random.choices(next_chars, weights=weights)[0]
+    second_order_txt += nxt
+    cur = nxt
+
+print(second_order_txt)
+```
+
+그렇게 출력된 second-order-approximation는 다음과 같은 모습이 나온다.
+
 <div style="background:#f5f5f5; padding:1em; border:1px solid #ccc; font-family:monospace; white-space:pre-wrap; word-break:break-word;">
 ineitued tho whal mu d dshi fexponsy wofesl hutotit bexiut athin sat conger upe acind be ans led boure wes h trmed onirmerwelligh sthed ssti t rred ivediadeatyod f thoumexileve tiersher tomere tougearif mbud me my herety lod ivoulanysear f wi whes tink bess sety isaurar se winde athe there mend thit thatheake the te bexpanel ford blemy y mppphat ci y id t foto igand h ve crse adjed amm o pedyondas ipichourmut suit owrmoncthofale lui ey meioncche of tholeve a thedinas myse ad toipaveapr tatth inc
 </div>
+
+여기서 두 글자가 아니라, 세 글자로 만들면 다음과 같은 출력이 되는데
 
 **third-order-approximation**
 <div style="background:#f5f5f5; padding:1em; border:1px solid #ccc; font-family:monospace; white-space:pre-wrap; word-break:break-word;">
