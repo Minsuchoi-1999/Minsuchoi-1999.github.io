@@ -1,7 +1,7 @@
 ---
 date: 2025-04-19 07:33:58
 layout: post
-title: "nlp(4) - N-gram의 한계와 Bengio의 Neural Probabilistic Language 모델"
+title: "NLP(4) - N-gram의 한계와 Bengio의 Neural Probabilistic Language 모델이란?"
 subtitle: A Neural Probabilistic Language Model 논문 리뷰
 description: 신경 확률적 언어 모델에 대해 알아본다.
 image: "https://res.cloudinary.com/dtloik0ts/image/upload/t_opt/v1743834058/92bcb4eb-341c-46dd-9a9a-086117c78770.png"
