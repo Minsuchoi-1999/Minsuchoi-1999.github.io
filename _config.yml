@@ -18,6 +18,33 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
+category_navigation:
+  - title: C언어
+    slug: C
+    url: /category/c/
+    description: 기초 문법부터 포인터, 구조체까지
+  - title: 자료구조
+    slug: 자료구조
+    url: /category/data-structures/
+    description: 배열, 리스트, 트리, 그래프, 해시
+  - title: 객체지향프로그래밍
+    slug: 객체지향프로그래밍
+    url: /category/oop/
+    description: C++와 OOP 개념 정리
+  - title: NLP/AI
+    slug: NLP, AI
+    url: /category/nlp-ai/
+    description: 언어모델과 고전 신경망 논문
+  - title: 유학 준비
+    url: /category/study-abroad/
+    categories:
+      - blog, 어학
+      - blog, 어학, 장학금, 논문, 운전면허
+    description: TOEFL, GRE, 장학금, 준비 기록
+  - title: 회고/Blog
+    slug: blog
+    url: /category/blog/
+    description: 회고와 개인 기록
 
 email: jungsi199@naver.com
 # See: https://disqus.com/
@@ -31,6 +58,7 @@ formspree_form_id: formspree_form_id
 # Remove the item if you don't need it
 github_username: Minsuchoi-1999
 instagram_username: minsu.c.0621
+linkedin_username: minsu-choi-256aa7304
 
 
 # Posts Settings

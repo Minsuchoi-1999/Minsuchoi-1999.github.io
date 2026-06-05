@@ -119,12 +119,12 @@
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "{{ page.title }}",
-            "headline": "{{ page.subtitle }}",
-            "description": "{{ page.description }}",
-            "image": "{{ page.image }}",
-            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-            "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
+            "name": {{ page.title | jsonify }},
+            "headline": {{ page.subtitle | jsonify }},
+            "description": {{ page.description | jsonify }},
+            "image": {{ page.image | jsonify }},
+            "url": {{ page.url | prepend: site.baseurl | prepend: site.url | jsonify }},
+            "articleBody": {{ content | strip_html | strip_newlines | jsonify }},
             "wordcount": "{{ content | number_of_words }}",
             "inLanguage": "{{ site.language }}",
             "dateCreated": "{{ page.date | date: '%Y-%m-%d/' }}",
@@ -132,33 +132,33 @@
             "dateModified": "{{ page.date | date: '%Y-%m-%d/' }}",
             "author": {
                 "@type": "Person",
-                "name": "{{ author.display_name }}",
+                "name": {{ author.display_name | jsonify }},
                 {% if author.photo %}
-                "image": "{{ author.photo }}",
+                "image": {{ author.photo | jsonify }},
                 {% else %}
-                "image": {{ "/assets/img/user.jpg" | prepend: site.baseurl | prepend: site.url }},
+                "image": {{ "/assets/img/user.jpg" | prepend: site.baseurl | prepend: site.url | jsonify }},
                 {% endif %}
-                "jobTitle": "{{ author.position }}",
-                "url": "{{ author.url | prepend: site.baseurl | prepend: site.url }}",
+                "jobTitle": {{ author.position | jsonify }},
+                "url": {{ author.url | prepend: site.baseurl | prepend: site.url | jsonify }},
                 "sameAs": [
                     {{ author_urls | split: "," | join: "," }}
                 ]
             },
             "publisher": {
                 "@type": "Organization",
-                "name": "{{ site.name }}",
-                "url": "{{ site.url }}{{site.baseurl}}/",
+                "name": {{ site.name | jsonify }},
+                "url": {{ "/" | prepend: site.baseurl | prepend: site.url | jsonify }},
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "{{ site.url }}{{site.baseurl}}/assets/img/blog-image.png",
+                    "url": {{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url | jsonify }},
                     "width": "600",
                     "height": "315"
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "{{ page.category }}",
-            "articleSection": "{{ page.category }}",
-            "keywords": [{{ page.tags | join: '","' | append: '"' | prepend: '"' }}]
+            "genre": {{ page.category | jsonify }},
+            "articleSection": {{ page.category | jsonify }},
+            "keywords": {{ page.tags | jsonify }}
         }
         </script>
     </body>

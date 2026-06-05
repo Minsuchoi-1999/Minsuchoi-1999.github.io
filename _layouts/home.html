@@ -45,7 +45,19 @@ layout: main
         {% for post in posts offset: offset %}
             <article class="box-item">
                 <span class="category">
-                    <a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category }}">
+                    {% assign category_url = nil %}
+                    {% for item in site.category_navigation %}
+                        {% if item.slug and post.category == item.slug %}
+                            {% assign category_url = item.url %}
+                        {% elsif item.categories and item.categories contains post.category %}
+                            {% assign category_url = item.url %}
+                        {% endif %}
+                    {% endfor %}
+                    {% unless category_url %}
+                        {% assign categories_folder = site.categories_folder | default: 'category' %}
+                        {% assign category_url = '/' | append: categories_folder | append: '/' | append: post.category %}
+                    {% endunless %}
+                    <a href="{{ category_url | prepend: site.baseurl }}">
                         <span>{{ post.category }}</span>
                     </a>
                 </span>

@@ -7,4 +7,5 @@ position: The One
 bio: 발전한 건 태도, 여전한 건 행동
 github_username: Minsuchoi-1999
 instagram_username: minsu.c.0621
+linkedin_username: minsu-choi-256aa7304
 ---

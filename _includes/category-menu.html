@@ -1,0 +1,14 @@
+{% if site.category_navigation %}
+  <section class="category-menu">
+    <h3>카테고리별로 보기</h3>
+    <ul>
+      {% for item in site.category_navigation %}
+        <li>
+          <a href="{{ item.url | prepend: site.baseurl }}">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}

@@ -59,6 +59,9 @@ aside.sidebar {
   }
 
   nav {
+    height: 100%;
+    overflow-y: auto;
+
     ul {
       padding: 0;
       margin: rem(5px) 0;
@@ -78,6 +81,46 @@ aside.sidebar {
           text-decoration: none;
           @include mainFont(300);
           color: $primaryDark;
+
+          &:hover {
+            color: $accentDark;
+            background: $themeColor;
+          }
+        }
+      }
+    }
+
+    .category-menu {
+      margin: rem(28px) rem(20px) rem(24px);
+      padding-top: rem(18px);
+      border-top: 1px solid $primaryDark;
+
+      h3 {
+        margin: 0 0 rem(8px);
+        @include mainFont(700);
+        font-size: rem(13px);
+        line-height: 1.4;
+        color: rgba($primaryDark, 0.62);
+        text-transform: uppercase;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 0;
+        list-style-type: none;
+
+        a {
+          display: block;
+          width: calc(100% + #{rem(40px)});
+          margin-left: rem(-20px);
+          padding: rem(15px) rem(20px);
+          @include mainFont(300);
+          color: $primaryDark;
+          text-decoration: none;
 
           &:hover {
             color: $accentDark;

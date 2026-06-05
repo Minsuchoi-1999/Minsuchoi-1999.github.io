@@ -7,10 +7,19 @@
         <section class="content">
             <main class="home" id="post" role="main">
                 <h1 class="title-category">/{{page.title}}</h1>
+                {% if page.description %}
+                    <p class="description">{{ page.description }}</p>
+                {% endif %}
                 <div id="grid" class="row flex-grid">
                     {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
                     {% for post in posts %}
-                        {% if post.category == page.slug %}
+                        {% assign show_post = false %}
+                        {% if page.slug and post.category == page.slug %}
+                            {% assign show_post = true %}
+                        {% elsif page.categories and page.categories contains post.category %}
+                            {% assign show_post = true %}
+                        {% endif %}
+                        {% if show_post %}
                             <article class="box-item">
                                 <div class="box-body">
                                     {% if post.image %}
