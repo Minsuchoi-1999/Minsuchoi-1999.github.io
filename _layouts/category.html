@@ -16,8 +16,12 @@
                         {% assign show_post = false %}
                         {% if page.slug and post.category == page.slug %}
                             {% assign show_post = true %}
-                        {% elsif page.categories and page.categories contains post.category %}
-                            {% assign show_post = true %}
+                        {% elsif page.categories %}
+                            {% for category in page.categories %}
+                                {% if post.category == category or post.category contains category %}
+                                    {% assign show_post = true %}
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
                         {% if show_post %}
                             <article class="box-item">
