@@ -1,0 +1,15 @@
+{% if site.google_adsense_account and site.google_adsense_ad_slot %}
+<div class="adsense-unit">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_adsense_account }}"
+       crossorigin="anonymous"></script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ site.google_adsense_account }}"
+       data-ad-slot="{{ site.google_adsense_ad_slot }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+{% endif %}

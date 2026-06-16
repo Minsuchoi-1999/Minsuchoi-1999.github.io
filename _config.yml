@@ -2,6 +2,8 @@
 name: Minflix
 title: Minflix | Minsu's TechBlog
 description: Minsu's techblog, thanks to developer Thiago Rossener.
+google_adsense_account: ca-pub-8136917168968629
+google_adsense_ad_slot: "6051878381"
 tags:
   - blog
   - template
@@ -70,7 +72,7 @@ two_columns_layout: true
 
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://minsuchoi-1999.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "ko-KR"
 categories_folder: category
