@@ -1,0 +1,61 @@
+.adblock-bait {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+}
+
+.adblock-wall[hidden] {
+  display: none;
+}
+
+.adblock-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(24px);
+  background: rgba(20, 20, 20, 0.86);
+}
+
+.adblock-wall__panel {
+  width: 100%;
+  max-width: rem(440px);
+  padding: rem(28px);
+  border-radius: rem(8px);
+  background: #fff;
+  color: $primaryDark;
+  text-align: center;
+  box-shadow: 0 rem(18px) rem(50px) rgba(0, 0, 0, 0.35);
+
+  h2 {
+    margin: 0 0 rem(12px);
+    font-size: rem(26px);
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0 0 rem(22px);
+    font-size: rem(16px);
+    line-height: 1.5;
+  }
+
+  button {
+    display: inline-block;
+    min-width: rem(150px);
+    padding: rem(12px) rem(18px);
+    border: 0;
+    border-radius: rem(4px);
+    background: $themeColor;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.adblock-is-active body {
+  overflow: hidden;
+}

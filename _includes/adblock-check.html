@@ -1,0 +1,69 @@
+{% if site.google_adsense_account %}
+<div class="adblock-bait adsbox ad ad-banner ad-unit" aria-hidden="true"></div>
+
+<div class="adblock-wall" id="adblock-wall" role="dialog" aria-modal="true" aria-labelledby="adblock-wall-title" hidden>
+  <div class="adblock-wall__panel">
+    <h2 id="adblock-wall-title">Ad blocker detected</h2>
+    <p>Please disable your ad blocker for this site and refresh the page to continue reading.</p>
+    <button type="button" id="adblock-wall-recheck">I disabled it</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var CHECK_DELAY = 1400;
+    var wall = document.getElementById('adblock-wall');
+    var recheck = document.getElementById('adblock-wall-recheck');
+    var bait = document.querySelector('.adblock-bait');
+
+    function isBlocked() {
+      if (!bait) {
+        return false;
+      }
+
+      var style = window.getComputedStyle ? window.getComputedStyle(bait) : null;
+      var baitHidden = !bait.offsetParent ||
+        bait.offsetHeight === 0 ||
+        bait.offsetWidth === 0 ||
+        (style && (style.display === 'none' || style.visibility === 'hidden'));
+      var adScriptMissing = typeof window.adsbygoogle === 'undefined';
+
+      return baitHidden || adScriptMissing;
+    }
+
+    function showWall() {
+      if (!wall) {
+        return;
+      }
+
+      wall.hidden = false;
+      document.documentElement.classList.add('adblock-is-active');
+    }
+
+    function hideWall() {
+      if (!wall) {
+        return;
+      }
+
+      wall.hidden = true;
+      document.documentElement.classList.remove('adblock-is-active');
+    }
+
+    function check() {
+      if (isBlocked()) {
+        showWall();
+      } else {
+        hideWall();
+      }
+    }
+
+    window.setTimeout(check, CHECK_DELAY);
+
+    if (recheck) {
+      recheck.addEventListener('click', function () {
+        window.location.reload();
+      });
+    }
+  })();
+</script>
+{% endif %}
