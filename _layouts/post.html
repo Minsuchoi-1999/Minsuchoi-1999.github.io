@@ -29,9 +29,9 @@
 
                 {% include toc.html %}
 
-                {{ content }}
+                {% include adsense-ad.html class="adsense-unit--post adsense-unit--post-start" slot=site.google_adsense_ad_slot format="horizontal" %}
 
-                {% include adsense-ad.html class="adsense-unit--post" slot=site.google_adsense_ad_slot format="horizontal" %}
+                {{ content }}
 
                 {% include pagination-post.html %}
             </article>
@@ -81,6 +81,7 @@
 
         {% include subscription.html %}
         {% include share.html %}
+        {% include adsense-ad.html class="adsense-unit--post adsense-unit--before-author" slot=site.google_adsense_ad_slot format="horizontal" %}
         {% include author.html %}
         {% include comments.html %}
         {% include footer.html %}
