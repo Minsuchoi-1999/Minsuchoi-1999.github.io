@@ -23,7 +23,7 @@
     padding-bottom: rem(10px);
 
     @include media(">=sm") {
-      flex-basis: 78%;
+      flex-basis: 76%;
       padding: 0 rem(48px) 0 rem(10px);
     }
   }
@@ -66,7 +66,7 @@
   ul,
   ol,
   iframe {
-    @include center(rem(1040px));
+    @include center(rem(900px));
     @include mainFont(400);
     font-size: rem(17px);
     line-height: rem(30px);
@@ -340,7 +340,7 @@
   padding: 0 rem(20px);
 
   @include media(">=sm") {
-    flex-basis: 22%;
+    flex-basis: 24%;
     padding: 0 rem(10px);
   }
 
