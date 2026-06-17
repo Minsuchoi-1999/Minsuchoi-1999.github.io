@@ -1,0 +1,56 @@
+---
+permalink: /adsense-side-rail-debug/
+---
+<!DOCTYPE html>
+<html lang="{{ site.language | default: 'ko-KR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>AdSense side rail debug</title>
+    {% if site.google_adsense_account %}
+    <meta name="google-adsense-account" content="{{ site.google_adsense_account }}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_adsense_account }}"
+      crossorigin="anonymous"></script>
+    {% endif %}
+    <style>
+      body {
+        margin: 0;
+        background: #fff;
+        color: #1d1d1f;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(760px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 56px 0 140px;
+      }
+
+      h1 {
+        margin: 0 0 24px;
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      p {
+        margin: 0 0 28px;
+        font-size: 20px;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AdSense side rail debug page</h1>
+      {% for i in (1..36) %}
+      <p>
+        This page intentionally uses a minimal layout. It has no fixed header, no time bar,
+        no footer, no two-column sidebar, no modal, and no post theme JavaScript. Use it to
+        check whether Auto ads side rail behavior is stable when only the AdSense script and
+        a long article body are present.
+      </p>
+      {% endfor %}
+    </main>
+  </body>
+</html>
