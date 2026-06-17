@@ -7,8 +7,11 @@ body {
   background-color: $primaryDark;
   padding: rem(10px) rem(15px);
   position: fixed;
+  top: 0;
   left: 0;
+  right: 0;
   width: 100%;
+  box-sizing: border-box;
   z-index: 10;
   transition: top 0.5s, left 0.3s ease, background-color 0.5s, box-shadow 0.5s;
   
