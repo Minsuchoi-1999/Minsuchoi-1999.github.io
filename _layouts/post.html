@@ -39,7 +39,6 @@
             {% if site.two_columns_layout %}
                 <aside class="see-also">
                     <h2>{{ site.translations.text.see_also | default: "See also" }}</h2>
-                    {% include adsense-ad.html class="adsense-unit--side" slot=site.google_adsense_side_ad_slot format="vertical" %}
                     <ul>
                         {% assign next_posts = site.posts | where_exp:"post","post.is_generated != true" | where_exp:"post","post.path != page.path" %}
                         {% assign shuffled_array = next_posts | shuffle %}
@@ -58,6 +57,7 @@
                             </li>
                         {% endfor %}
                     </ul>
+                    {% include adsense-ad.html class="adsense-unit--side" slot=site.google_adsense_side_ad_slot format="vertical" %}
                 </aside>
             {% endif %}
 
