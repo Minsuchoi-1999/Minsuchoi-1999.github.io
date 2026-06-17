@@ -3,10 +3,11 @@
   display: table;
   width: 100%;
   padding: rem(40px) 0;
-  margin: rem(40px) 0;
+  margin: rem(56px) 0 rem(40px);
 
   @include media(">=sm") {
     padding: rem(50px) 0;
+    margin-top: rem(84px);
   }
 
   .details {
