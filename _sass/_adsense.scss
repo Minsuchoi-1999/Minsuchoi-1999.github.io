@@ -1,0 +1,28 @@
+.adsense-unit {
+  clear: both;
+  display: block;
+  width: calc(100% - #{rem(40px)});
+  max-width: rem(760px);
+  min-height: rem(280px);
+  margin: rem(40px) auto rem(32px);
+  padding: 0;
+  overflow: hidden;
+}
+
+.adsense-unit .adsbygoogle {
+  display: block;
+  width: 100%;
+  min-height: rem(280px);
+}
+
+@include media("<sm") {
+  .adsense-unit {
+    width: calc(100% - #{rem(24px)});
+    min-height: rem(250px);
+    margin: rem(32px) auto rem(24px);
+  }
+
+  .adsense-unit .adsbygoogle {
+    min-height: rem(250px);
+  }
+}
