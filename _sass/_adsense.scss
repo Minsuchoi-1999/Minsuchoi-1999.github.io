@@ -15,6 +15,10 @@
   min-height: rem(280px);
 }
 
+.adsense-unit--side {
+  display: none;
+}
+
 @include media("<sm") {
   .adsense-unit {
     width: calc(100% - #{rem(24px)});
@@ -24,5 +28,23 @@
 
   .adsense-unit .adsbygoogle {
     min-height: rem(250px);
+  }
+}
+
+@include media(">=sm") {
+  .see-also .adsense-unit--side {
+    clear: none;
+    display: block;
+    position: sticky;
+    top: rem(88px);
+    width: 100%;
+    max-width: rem(300px);
+    min-height: rem(600px);
+    margin: 0 0 rem(28px);
+  }
+
+  .see-also .adsense-unit--side .adsbygoogle {
+    width: 100%;
+    min-height: rem(600px);
   }
 }

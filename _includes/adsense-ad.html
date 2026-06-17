@@ -1,13 +1,15 @@
-{% if site.google_adsense_account and site.google_adsense_ad_slot %}
-<aside class="adsense-unit" aria-label="Advertisement">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_adsense_account }}"
-       crossorigin="anonymous"></script>
+{% assign ad_slot = include.slot | default: site.google_adsense_ad_slot %}
+{% assign ad_format = include.format | default: "horizontal" %}
+{% assign ad_full_width = include.full_width | default: "false" %}
+{% assign ad_class = include.class | default: "" %}
+{% if site.google_adsense_account and ad_slot %}
+<aside class="adsense-unit {{ ad_class }}" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="{{ site.google_adsense_account }}"
-       data-ad-slot="{{ site.google_adsense_ad_slot }}"
-       data-ad-format="horizontal"
-       data-full-width-responsive="false"></ins>
+       data-ad-slot="{{ ad_slot }}"
+       data-ad-format="{{ ad_format }}"
+       data-full-width-responsive="{{ ad_full_width }}"></ins>
   <script>
        (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
