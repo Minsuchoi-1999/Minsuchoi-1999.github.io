@@ -13,18 +13,18 @@
   padding-bottom: rem(40px);
 
   @include media(">=sm") {
-    max-width: rem(1100px);
+    max-width: rem(1280px);
     flex-direction: row;
     margin: 0 auto;
-    padding: rem(40px) 0;
+    padding: rem(44px) rem(24px);
   }
 
   .post-content {
     padding-bottom: rem(10px);
 
     @include media(">=sm") {
-      flex-basis: 70%;
-      padding: 0 rem(30px) 0 rem(10px);
+      flex-basis: 76%;
+      padding: 0 rem(48px) 0 rem(10px);
     }
   }
 }
@@ -66,7 +66,7 @@
   ul,
   ol,
   iframe {
-    @include center(rem(800px));
+    @include center(rem(900px));
     @include mainFont(400);
     font-size: rem(17px);
     line-height: rem(30px);
@@ -340,7 +340,7 @@
   padding: 0 rem(20px);
 
   @include media(">=sm") {
-    flex-basis: 30%;
+    flex-basis: 24%;
     padding: 0 rem(10px);
   }
 
