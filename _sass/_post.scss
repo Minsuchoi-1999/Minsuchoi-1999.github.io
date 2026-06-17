@@ -385,6 +385,14 @@
   }
 }
 
+.post-author-break {
+  height: rem(72px);
+
+  @include media(">=sm") {
+    height: rem(128px);
+  }
+}
+
 /* Progress bar */
 
 .progress-bar {
