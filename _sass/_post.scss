@@ -108,10 +108,10 @@
 
   > p:not(.post-info):not(.post-subtitle) .sentence-break {
     display: block;
-    height: rem(14px);
+    height: rem(26px);
 
     @include media(">=sm") {
-      height: rem(18px);
+      height: rem(32px);
     }
   }
 
@@ -534,6 +534,10 @@
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: space-between;
+
+  @include media("<sm") {
+    display: none;
+  }
 
   @include media(">=sm") {
     padding: rem(15px);
