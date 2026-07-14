@@ -29,7 +29,23 @@
 
                 {% include toc.html %}
 
-                {{ content }}
+                {% assign post_content_parts = content | split: '</p>' %}
+                {% assign body_paragraph_count = 0 %}
+                {% for post_content_part in post_content_parts %}
+                    {{ post_content_part }}
+                    {% unless forloop.last %}
+                        </p>
+                        {% assign stripped_post_content_part = post_content_part | strip %}
+                        {% if stripped_post_content_part contains '<p>' %}
+                            {% assign body_paragraph_count = body_paragraph_count | plus: 1 %}
+                            {% if body_paragraph_count == 2 %}
+                                {% include adsense-ad.html class="adsense-unit--post adsense-unit--post-start" format="auto" full_width="true" %}
+                            {% elsif body_paragraph_count == 6 %}
+                                {% include adsense-ad.html class="adsense-unit--post" format="auto" full_width="true" %}
+                            {% endif %}
+                        {% endif %}
+                    {% endunless %}
+                {% endfor %}
 
                 {% include pagination-post.html %}
             </article>
