@@ -98,6 +98,25 @@
     }
   }
 
+  > p:not(.post-info):not(.post-subtitle) br {
+    display: block;
+    content: "";
+    height: rem(48px);
+
+    @include media(">=sm") {
+      height: rem(64px);
+    }
+  }
+
+  > p:not(.post-info):not(.post-subtitle) {
+    white-space: pre-line;
+    line-height: rem(45px);
+
+    @include media(">=sm") {
+      line-height: rem(60px);
+    }
+  }
+
   img.post-cover {
     padding: 0;
     margin-top: rem(20px);

@@ -121,6 +121,7 @@ plugins:
 # Exclude my node related stuff
 exclude:
   [
+    ".sass-cache/",
     "docs/",
     "vendor/",
     "LICENSE",
@@ -141,6 +142,8 @@ exclude:
 version: v3.1.2
 
 kramdown:
+  input: GFM
+  hard_wrap: false
   math_engine: mathjax
   math_engine_opts:
     preview: true
