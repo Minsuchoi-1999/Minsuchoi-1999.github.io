@@ -117,6 +117,14 @@
     }
   }
 
+  > p:not(.post-info):not(.post-subtitle) + p:not(.post-info):not(.post-subtitle) {
+    margin-top: rem(64px);
+
+    @include media(">=sm") {
+      margin-top: rem(88px);
+    }
+  }
+
   img.post-cover {
     padding: 0;
     margin-top: rem(20px);
