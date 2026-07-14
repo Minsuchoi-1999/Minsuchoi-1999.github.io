@@ -110,18 +110,18 @@
 
   > p:not(.post-info):not(.post-subtitle) {
     white-space: pre-line;
-    line-height: rem(45px);
+    line-height: rem(30px);
 
     @include media(">=sm") {
-      line-height: rem(60px);
+      line-height: rem(40px);
     }
   }
 
   > p:not(.post-info):not(.post-subtitle) + p:not(.post-info):not(.post-subtitle) {
-    margin-top: rem(96px);
+    margin-top: rem(40px);
 
     @include media(">=sm") {
-      margin-top: rem(88px);
+      margin-top: rem(56px);
     }
   }
 
