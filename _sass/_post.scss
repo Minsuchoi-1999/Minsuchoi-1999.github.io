@@ -118,7 +118,7 @@
   }
 
   > p:not(.post-info):not(.post-subtitle) + p:not(.post-info):not(.post-subtitle) {
-    margin-top: rem(64px);
+    margin-top: rem(96px);
 
     @include media(">=sm") {
       margin-top: rem(88px);
