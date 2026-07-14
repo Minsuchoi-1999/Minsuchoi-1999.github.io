@@ -29,7 +29,11 @@
 
                 {% include toc.html %}
 
-                {{ content }}
+                {% assign post_content = content
+                    | replace: '<br />', '<span class="sentence-break" aria-hidden="true"></span>'
+                    | replace: '<br>', '<span class="sentence-break" aria-hidden="true"></span>'
+                %}
+                {{ post_content }}
 
                 {% include pagination-post.html %}
             </article>

@@ -99,11 +99,27 @@
   }
 
   > p:not(.post-info):not(.post-subtitle) {
-    white-space: pre-line;
     line-height: rem(24px);
 
     @include media(">=sm") {
       line-height: rem(30px);
+    }
+  }
+
+  > p:not(.post-info):not(.post-subtitle) .sentence-break {
+    display: block;
+    height: rem(14px);
+
+    @include media(">=sm") {
+      height: rem(18px);
+    }
+  }
+
+  > p:not(.post-info):not(.post-subtitle) + p:not(.post-info):not(.post-subtitle) {
+    margin-top: rem(8px);
+
+    @include media(">=sm") {
+      margin-top: rem(12px);
     }
   }
 

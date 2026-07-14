@@ -143,7 +143,7 @@ version: v3.1.2
 
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true
   math_engine: mathjax
   math_engine_opts:
     preview: true
